@@ -46,7 +46,7 @@ class Inventory {
     }
     const sweet = this.sweets.get(id);
     
-    sweet.quantity += quantity; // increasing the quantity of the sweet after purchase
+    sweet.quantity += quantity; // increasing the quantity of the sweet after restock
   }
 }
 module.exports = Inventory; //Exporting the inventory class
