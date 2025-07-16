@@ -20,5 +20,12 @@ class Inventory {
   getAllSweets() {
     return Array.from(this.sweets.values()); //Returning all sweets in inventory
   }
+  deleteSweet(id){
+    // Check if sweet with given ID exists
+    if(!this.sweets.has(id)){
+        throw new Error("Sweet with this ID does not exist.");
+    }
+    this.sweets.delete(id) // Deleting sweet from the inventory
+  }
 }
 module.exports = Inventory; //Exporting the inventory class
