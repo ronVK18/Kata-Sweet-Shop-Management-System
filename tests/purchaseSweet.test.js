@@ -12,7 +12,7 @@ describe("Purchase Sweet Feature", () => {
     inventory.addSweet(sweet);
     let id = sweet.id; // getting the id of the sweet to purchase
     // Simulating purchase logic
-    inventory.buySweet(id, 5); // buying 5 units of the sweet
+    inventory.purchaseSweet(id, 5); // buying 5 units of the sweet
     const sweets = inventory.getAllSweets();
     expect(sweets.length).toBe(1); // check if sweet is still present
     expect(sweets[0].name).toBe("Kaju Katli"); // verifying the name of the sweet that is purchased
@@ -24,7 +24,7 @@ describe("Purchase Sweet Feature", () => {
   test("should throw error when try to buy a sweet that doesn't exist", () => {
     let id = 12; // getting the id of the sweet to purchase
     expect(() => {
-      inventory.buySweet(id, 5); // trying to purchase a sweet that does not exist
+      inventory.purchaseSweet(id, 5); // trying to purchase a sweet that does not exist
     }).toThrow(
       "Sweet with this ID does not exist that you are trying to purchase"
     );
@@ -37,7 +37,7 @@ describe("Purchase Sweet Feature", () => {
     let id = sweet.id; // getting the id of the sweet to purchase
     // Simulating purchase logic
     expect(() => {
-      inventory.buySweet(id, 15); // trying to purchase a sweet that does not exist
+      inventory.purchaseSweet(id, 15); // trying to purchase a sweet that does not exist
     }).toThrow(
       "Sweet with this ID does not have enough quantity available for purchase"
     );

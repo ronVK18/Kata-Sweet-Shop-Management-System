@@ -27,5 +27,17 @@ class Inventory {
     }
     this.sweets.delete(id) // Deleting sweet from the inventory 
   }
+  purchaseSweet(id,quantity){
+    // Check if sweet with given ID exists
+    if(!this.sweets.has(id)){
+        throw new Error("Sweet with this ID does not exist that you are trying to purchase");
+    }
+    const sweet = this.sweets.get(id);
+    // Check if enough quantity is available
+    if(sweet.quantity < quantity){
+        throw new Error("Sweet with this ID does not have enough quantity available for purchase");
+    }
+    sweet.quantity -= quantity; // Decreasing the quantity of the sweet after purchase
+  }
 }
 module.exports = Inventory; //Exporting the inventory class
