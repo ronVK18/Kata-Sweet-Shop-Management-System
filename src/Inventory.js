@@ -39,5 +39,14 @@ class Inventory {
     }
     sweet.quantity -= quantity; // Decreasing the quantity of the sweet after purchase
   }
+  reStockSweet(id,quantity){
+    // Check if sweet with given ID exists
+    if(!this.sweets.has(id)){
+        throw new Error("Sweet with this ID does not exist that you are trying to restock");
+    }
+    const sweet = this.sweets.get(id);
+    
+    sweet.quantity += quantity; // increasing the quantity of the sweet after purchase
+  }
 }
 module.exports = Inventory; //Exporting the inventory class
