@@ -20,8 +20,8 @@ describe("Add Sweet Feature", () => {
   });
  // test to check if a sweet with the same name cannot be added
   test("should not allow duplicate sweet names", () => {
-    const sweet1 = new Sweet( "Gulab Jamun",  20, 10 , "Milk-Based");
-    const sweet2 = new Sweet( "Gulab Jamun",  25, 15 , "Milk-Based"); // same name, different ID
+    let sweet1 = new Sweet( "Gulab Jamun",  20, 10 , "Milk-Based");
+    let sweet2 = new Sweet( "Gulab Jamun",  25, 15 , "Milk-Based"); // same name, different ID
 
     inventory.addSweet(sweet1);
 

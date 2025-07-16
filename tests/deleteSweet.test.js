@@ -21,6 +21,6 @@ describe("Delete Sweet Feature", () => {
     let id=12 // getting the id of the sweet to delete
    expect(() => {
       inventory.deleteSweet(id); // trying to delete a sweet that does not exist
-    }).toThrow("Sweet with this ID does not exist.");
+    }).toThrow("Sweet with this ID does not exist");
   });
 });
