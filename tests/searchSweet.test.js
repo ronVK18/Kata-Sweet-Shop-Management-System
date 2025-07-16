@@ -11,8 +11,8 @@ describe("Search Sweet Feature", () => {
         let sweet = new Sweet("Kaju Katli", 50, 10, "Milk-Based");
         inventory.addSweet(sweet);
         let searchName = "Kaju Katli"; // name of the sweet to search
-        const sweets = inventory.getAllSweets();
-        const foundSweet = sweets.find(s => s.name.toLowerCase() === searchName.toLowerCase());
+        
+        const foundSweet = inventory.searchSweetByName(searchName);
         expect(foundSweet).toBeDefined(); // check if sweet is found
         expect(foundSweet.name).toBe("Kaju Katli"); // verifying the name of the sweet that is searched
     })
@@ -21,8 +21,7 @@ describe("Search Sweet Feature", () => {
         let sweet = new Sweet("Kaju Katli", 50, 10, "Milk-Based");
         inventory.addSweet(sweet);
         let searchName = "Gulab Jamun"; // name of the sweet to search
-        const sweets = inventory.getAllSweets();
-        const foundSweet = sweets.find(s => s.name.toLowerCase() === searchName.toLowerCase());
+        const foundSweet = inventory.searchSweetByName(searchName);
         expect(foundSweet).toBeUndefined(); // check if sweet is not found
     })
 });

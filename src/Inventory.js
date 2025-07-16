@@ -48,5 +48,10 @@ class Inventory {
     
     sweet.quantity += quantity; // increasing the quantity of the sweet after restock
   }
+  searchSweetByName(name){
+    // Searching for sweet by name
+    const foundSweet = Array.from(this.sweets.values()).find(s => s.name.toLowerCase() === name.toLowerCase());
+    return foundSweet; // Returning the found sweet or undefined if not found
+  }
 }
 module.exports = Inventory; //Exporting the inventory class
