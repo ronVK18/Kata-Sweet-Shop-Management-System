@@ -18,7 +18,7 @@ class Inventory {
     this.sweets.set(sweet.id, sweet); //Adding sweet to the inventory
   }
   getAllSweets() {
-    return Array.from(this.sweets.values()); //Returning all sweets in inventory
+    return Array.from(this.sweets.values()); //Returning all sweets present in inventory
   }
   deleteSweet(id){
     // Check if sweet with given ID exists
