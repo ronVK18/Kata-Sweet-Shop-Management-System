@@ -7,4 +7,4 @@ class Sweet {
         this.category=category; // category of sweet like "Milk-Based","Nut-Based" ,"Flour-Based" ,"Vegetable-Based" ,"Fried"
     } 
 }
-module.exports = Sweet;
+module.exports = Sweet; //  Exporting the sweet class
