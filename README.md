@@ -45,7 +45,7 @@ npm test
 
 To generate a coverage report:
 ```bash
-npm test -- --coverage
+npm test  --coverage
 ```
 
 If you have configured `jest-html-reporter`, an HTML report will be generated at `test-report.html` after running tests.
@@ -92,7 +92,7 @@ sweet-shop-management-system/
 
 4. **(Optional) Generate coverage or HTML report**  
    ```bash
-   npm test -- --coverage
+   npm test  --coverage
    ```
 
 ---
