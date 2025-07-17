@@ -28,9 +28,10 @@ describe("Search Sweet Feature", () => {
     })
     // test to check if we can search a sweet in a price range
     test("should allow search of a sweet in a price range",()=>{
-        let sweet1 = new Sweet("Kaju Katli", 50, 10, "Milk-Based");
+        let sweet1 = new Sweet("Kaju Katli", 30, 10, "Milk-Based");
         let sweet2= new Sweet("Gulab Jamun", 50, 70, "Milk-Based");
-        inventory.addSweet(sweet);
+        inventory.addSweet(sweet1);
+        inventory.addSweet(sweet2);
         
         let minPrice = 40; // minimum price of the sweet to search
         let maxPrice = 80; // maximum price of the sweet to search

@@ -53,5 +53,15 @@ class Inventory {
     const foundSweet = Array.from(this.sweets.values()).find(s => s.name.toLowerCase() === name.toLowerCase());
     return foundSweet; // Returning the found sweet or undefined if not found
   }
+  searchSweetByCategory(category) {
+    // Searching for sweets by category
+    const foundSweets = Array.from(this.sweets.values()).filter(s => s.category.toLowerCase() === category.toLowerCase());
+    return foundSweets.length > 0 ? foundSweets : undefined; // Returning the found sweets or undefined if not found
+  }
+  searchSweetByPriceRange(minPrice, maxPrice) {
+    // Searching for sweets within a price range
+    const foundSweets = Array.from(this.sweets.values()).filter(s => s.price >= minPrice && s.price <= maxPrice);
+    return foundSweets.length > 0 ? foundSweets : undefined; // Returning the found sweets or undefined if not found
+  }
 }
 module.exports = Inventory; //Exporting the inventory class
