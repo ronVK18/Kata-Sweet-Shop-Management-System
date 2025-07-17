@@ -40,7 +40,7 @@ describe("Search Sweet Feature", () => {
         expect(foundSweet.length).toBe(1); // verifying the number of sweets found in the price range
     })
     // test to check if we can search a sweet that is not present , it should return undefined
-    test("should return undefinde when  search of a sweet that is not present",()=>{
+    test("should return undefined when  search of a sweet that is not present",()=>{
         let sweet = new Sweet("Kaju Katli", 50, 10, "Milk-Based");
         inventory.addSweet(sweet);
         let searchName = "Gulab Jamun"; // name of the sweet to search
