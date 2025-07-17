@@ -63,5 +63,19 @@ class Inventory {
     const foundSweets = Array.from(this.sweets.values()).filter(s => s.price >= minPrice && s.price <= maxPrice);
     return foundSweets.length > 0 ? foundSweets : undefined; // Returning the found sweets or undefined if not found
   }
+  sortAccordingToName(ascending=true){
+    // Sorting sweets according to name
+    const sortedSweets = Array.from(this.sweets.values()).sort((a, b) => {
+      return ascending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+    });
+    return sortedSweets; // Returning the sorted sweets
+  }
+  sortAccordingToPrice(ascending=true){
+    // Sorting sweets according to price
+    const sortedSweets = Array.from(this.sweets.values()).sort((a, b) => {
+      return ascending ? a.price - b.price : b.price - a.price;
+    });
+    return sortedSweets; // Returning the sorted sweets
+  }
 }
 module.exports = Inventory; //Exporting the inventory class
