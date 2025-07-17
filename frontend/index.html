@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Shop Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-candy-cane"></i> Sweet Shop Management</h1>
+                <p>Manage your sweet inventory with ease</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Add Sweet Form -->
+            <section class="form-section">
+                <h2><i class="fas fa-plus-circle"></i> Add New Sweet</h2>
+                <form id="addSweetForm" class="sweet-form" onsubmit="return false;">
+                    <div class="form-grid">
+                       
+                        <div class="form-group">
+                            <label for="sweetName">Name</label>
+                            <input type="text" id="sweetName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sweetCategory">Category</label>
+                            <select id="sweetCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="Nut-Based">Nut-Based</option>
+                                <option value="Milk-Based">Milk-Based</option>
+                                <option value="Vegetable-Based">Vegetable-Based</option>
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Candy">Candy</option>
+                                <option value="Pastry">Pastry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sweetPrice">Price (₹)</label>
+                            <input type="number" id="sweetPrice" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sweetQuantity">Quantity</label>
+                            <input type="number" id="sweetQuantity" required>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="handleAddSweet(event)">
+                        <i class="fas fa-plus"></i> Add Sweet
+                    </button>
+                </form>
+            </section>
+
+            <!-- Actions Section -->
+            <section class="actions-section">
+                <div class="actions-grid">
+                    <!-- Search -->
+                    <div class="action-card">
+                        <h3><i class="fas fa-search"></i> Search Sweets</h3>
+                        <div class="search-controls">
+                            <select id="searchType">
+                                <option value="name">By Name</option>
+                                <option value="category">By Category</option>
+                                <option value="price">By Price Range</option>
+                            </select>
+                            <div id="searchInputs">
+                                <input type="text" id="searchValue" placeholder="Enter search term">
+                            </div>
+                            <button id="searchBtn" class="btn btn-secondary">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sort -->
+                    <div class="action-card">
+                        <h3><i class="fas fa-sort"></i> Sort Sweets</h3>
+                        <div class="sort-controls">
+                            <select id="sortType">
+                                <option value="name">By Name</option>
+                                <option value="price">By Price</option>
+                            </select>
+                            <select id="sortOrder">
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                            <button id="sortBtn" class="btn btn-secondary">
+                                <i class="fas fa-sort"></i> Sort
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Purchase -->
+                    <div class="action-card">
+                        <h3><i class="fas fa-shopping-cart"></i> Purchase Sweet</h3>
+                        <div class="purchase-controls">
+                            <input type="number" id="purchaseId" placeholder="Sweet ID">
+                            <input type="number" id="purchaseQuantity" placeholder="Quantity">
+                            <button id="purchaseBtn" class="btn btn-success">
+                                <i class="fas fa-shopping-cart"></i> Purchase
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Restock -->
+                    <div class="action-card">
+                        <h3><i class="fas fa-boxes"></i> Restock Sweet</h3>
+                        <div class="restock-controls">
+                            <input type="number" id="restockId" placeholder="Sweet ID">
+                            <input type="number" id="restockQuantity" placeholder="Quantity">
+                            <button id="restockBtn" class="btn btn-warning">
+                                <i class="fas fa-boxes"></i> Restock
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inventory Display -->
+            <section class="inventory-section">
+                <div class="inventory-header">
+                    <h2><i class="fas fa-warehouse"></i> Sweet Inventory</h2>
+                    <button id="refreshBtn" class="btn btn-info">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                <div id="sweetsList" class="sweets-grid">
+                    <!-- Sweets will be displayed here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <!-- Include your Inventory class -->
+    <!-- <script src="../src/Inventory.js"></script> -->
+    <script src="../src/index.js"></script>
+</body>
+</html>
