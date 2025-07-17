@@ -61,7 +61,10 @@ sweet-shop-management-system/
 │   ├── Inventory.js      # Core logic to manage sweets
 ├── tests/
 │   └── inventory.test.js # All test cases
-├── test-report.html      # (Generated after running tests with html-reporter)
+├── frontend/
+│   └── index.html        # Front-end UI (optional)
+├── screenshots/          # Front-end screenshots
+├── test-report.html      # Generated after running tests
 ├── README.md
 ├── package.json
 └── .gitignore
@@ -96,12 +99,39 @@ sweet-shop-management-system/
 
 ## 📊 Test Report
 
-After running tests with `jest-html-reporter`, open:
+After running tests with `jest-html-reporter`, open the following file in your browser to view a detailed HTML test report:
 ```
 test-report.html
 ```
-in your browser to view a detailed HTML report.
 
+---
 
+## 📸 Front-End 
+
+A basic front-end interface is available at:
+
+```
+frontend/index.html
+```
+
+### 👉 To view the front-end using Live Server:
+
+1. Open the project folder in **VS Code**
+2. Right-click on `frontend/index.html`
+3. Click **"Open with Live Server"**
+4. The page will open in your browser at:  
+   `http://127.0.0.1:5500/frontend/index.html` (or similar)
+
+> 💡 Make sure you have the **Live Server** extension installed in VS Code.
+
+---
+
+## 🖼️ Screenshots
+
+Screenshots of the front-end UI are available in the `/screenshots` folder.
+
+Example:  
+![Sweet Shop UI](./screenshots/image1.jpg)
+![Sweet Shop UI](./screenshots/image2.png)
 
 
