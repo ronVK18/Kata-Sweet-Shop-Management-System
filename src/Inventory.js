@@ -29,6 +29,9 @@ class Inventory {
   }
   purchaseSweet(id,quantity){
     // Check if sweet with given ID exists
+    if(quantity < 0){
+        throw new Error("Quantity cannot be negative");
+    }
     if(!this.sweets.has(id)){
         throw new Error("Sweet with this ID does not exist that you are trying to purchase");
     }
@@ -41,6 +44,9 @@ class Inventory {
   }
   reStockSweet(id,quantity){
     // Check if sweet with given ID exists
+    if(quantity < 0){
+        throw new Error("Quantity cannot be negative");
+    }
     if(!this.sweets.has(id)){
         throw new Error("Sweet with this ID does not exist that you are trying to restock");
     }

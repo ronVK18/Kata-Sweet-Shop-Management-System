@@ -42,4 +42,14 @@ describe("Purchase Sweet Feature", () => {
       "Sweet with this ID does not have enough quantity available for purchase"
     );
   });
+  // test to check if we can enter a negative quantity while purchasing, it should throw an error
+  test("should throw error when we try to buy a negative quantity", () => {
+    let sweet = new Sweet("Kaju Katli", 50, 10, "Milk-Based");
+    inventory.addSweet(sweet);
+    let id = sweet.id; // getting the id of the sweet to purchase
+    // Simulating purchase logic
+    expect(() => {
+      inventory.purchaseSweet(id, -5); // trying to purchase a sweet with negative quantity
+    }).toThrow("Quantity cannot be negative");
+  });
 });

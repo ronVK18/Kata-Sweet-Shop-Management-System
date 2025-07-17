@@ -30,5 +30,16 @@ describe("Restock Sweet Feature", () => {
     );
   });
 
+  // test to check if we can restock a sweet with negative quantity, it should throw an error
+  test("should throw error when we try to restock a sweet with negative quantity", () =>{ 
+    let sweet = new Sweet("Kaju Katli", 50, 10, "Milk-Based");
+    inventory.addSweet(sweet);
+    let id = sweet.id; // getting the id of the sweet to restock
+    // Simulating restock logic
+    expect(() => {
+      inventory.reStockSweet(id, -5); // trying to restock a sweet with negative quantity
+    }).toThrow("Quantity cannot be negative");
+  });
+
  
 });

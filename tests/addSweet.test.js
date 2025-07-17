@@ -29,4 +29,5 @@ describe("Add Sweet Feature", () => {
       inventory.addSweet(sweet2);
     }).toThrow("Sweet with this name already exists.");
   });
+  
 });
